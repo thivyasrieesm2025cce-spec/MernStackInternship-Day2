@@ -1,0 +1,3 @@
+import React,{useState} from "react"
+function Settings(props){const [name,setName]=useState(props.profile);const [workspace,setWorkspace]=useState(props.workspace);return <><h2>Settings</h2><form className="panel" onSubmit={e=>{e.preventDefault();if(!name.trim()||!workspace.trim())return;props.save(name.trim(),workspace.trim());alert("Settings saved for this session")}}><label>Profile name<input required value={name} onChange={e=>setName(e.target.value)}/></label><label>Workspace name<input required value={workspace} onChange={e=>setWorkspace(e.target.value)}/></label><button>Save Settings</button></form></>}
+export default Settings
